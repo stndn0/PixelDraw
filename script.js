@@ -2,6 +2,12 @@
 const PIXEL_COUNT = 1024
 const pixels = []
 
+// DOM elements
+const canvas = document.getElementById("canvas")
+const gridSizeSlider = document.getElementById("myRange");
+const gridSizeText = document.getElementById("grid-size");
+
+
 // Populate grid with unique pixels
 for (let i = 0; i < PIXEL_COUNT; i++) {
     pixels[i] = document.createElement('div')
@@ -10,9 +16,13 @@ for (let i = 0; i < PIXEL_COUNT; i++) {
     document.getElementById("canvas").appendChild(pixels[i])
 }
 
+// User controls
+gridSizeSlider.oninput = function() {
+    gridSizeText.innerHTML = "Grid size: " + gridSizeSlider.value + " x " + gridSizeSlider.value;
+}
+
 
 // Listen to user interaction on the canvas
-const canvas = document.getElementById("canvas")
 window.addEventListener("mouseover", function (e) {
     // Where was the click?
     let target = e.target;

@@ -28,7 +28,7 @@ body {
 #canvas-controls {
     background-color: #1b1b1b;
     display: grid;
-    grid-template-columns: 120px 120px 120px 120px;
+    grid-template-columns: 150px 136px 136px 136px;
     grid-template-rows: 36px 36px 36px;
     grid-template-areas: 
     "text . . ."
@@ -37,14 +37,15 @@ body {
 
 .cell {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: flex-start;
     background-color: inherit;
+    padding-left: 6px;
+    padding-right: 6px;
 }
 
 .text {
-    font-size: 16px;
+    font-size: 14px;
     color: antiquewhite;
     background-color: inherit;
 }
@@ -54,7 +55,7 @@ body {
 }
 
 
-/* for now make it 8*8 grid */
+/* for now make it 32*32 grid */
 #canvas {
     border: 24px solid #1b1b1b;
     /* Add 16pxx to account for pixel borders */
