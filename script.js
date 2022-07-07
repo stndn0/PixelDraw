@@ -8,19 +8,18 @@ for (let i = 0; i < PIXEL_COUNT; i++) {
     pixels[i].className = 'pixel'
     pixels[i].id = 'pixel' + i
     document.getElementById("canvas").appendChild(pixels[i])
-    pixels[i].addEventListener("click", clickListener)
 }
 
-// Event listener - user clicks a pixel, get pixel info
-// https://javascript.info/event-delegation
-// https://stackoverflow.com/questions/31785614/dynamically-created-div-behavior-on-button-click
-function clickListener() {
-    for (let i = 0; i < PIXEL_COUNT; i++) {
-        console.log(document.getElementById(pixels[i].id))
+// Listen to user interaction on the canvas
+const canvas = document.getElementById("canvas")
+canvas.onclick = function(event) {
+    // Where was the click?
+    let target = event.target;      
+
+    // Do something when the user clicks a pixel
+    if (target.className == "pixel") {
+        console.log("lol")
     }
-    // console.log(document.getElementsByClassName("pixel"))
-    // document.getElementById("pixel").style.width = '300px';
+    console.log(target.id)
 }
-
-// const canvas = document.getE
 
