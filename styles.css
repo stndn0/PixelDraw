@@ -1,26 +1,62 @@
+* {
+    /* background-color: #ffb948; */
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffb948;
+}
+
 html,
 body {
     min-height: 100vh;
     overflow: auto;
 }
 
-
-#testid {
-    font-size: 70px;
-}
-
 #canvas-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
 }
 
+#canvas-controls-container {
+    width: 624px;
+    height: 100px;
+    margin-bottom: 24px;
+
+}
+
+#canvas-controls {
+    background-color: #1b1b1b;
+    display: grid;
+    grid-template-columns: 120px 120px 120px 120px;
+    grid-template-rows: 36px 36px 36px;
+    grid-template-areas: 
+    "text . . ."
+    "slidecontainer . . .";
+}
+
+.cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: inherit;
+}
+
+.text {
+    font-size: 16px;
+    color: antiquewhite;
+    background-color: inherit;
+}
+
+.slidecontainer {
+    background-color: inherit;
+}
 
 
 /* for now make it 8*8 grid */
 #canvas {
-    border: 2px solid black;
+    border: 24px solid #1b1b1b;
     /* Add 16pxx to account for pixel borders */
     width: 576px;
     height: 576px;

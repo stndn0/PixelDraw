@@ -11,20 +11,12 @@ for (let i = 0; i < PIXEL_COUNT; i++) {
 }
 
 
-
 // Listen to user interaction on the canvas
 const canvas = document.getElementById("canvas")
-
-
-// canvas.addEventListener('click', (event) => {
-//     console.log(event.button)
-//   })
-
-
 window.addEventListener("mouseover", function (e) {
     // Where was the click?
     let target = e.target;
-    console.log("DEBUG: Current pixel:", target.id)
+    console.log("DEBUG: Current target:", target.id)
 
     // If user only clicks on one pixel
     canvas.addEventListener('mousedown', (event) => {
@@ -52,15 +44,3 @@ window.addEventListener("mouseover", function (e) {
         }
     }
 })
-
-    // // Where was the click?
-    // let target = event.target;
-
-    // // Do something when the user clicks a pixel
-    // if (target.className == "pixel") {
-    //     // For now, just change the pixel to red.
-    //     // document.getElementById(target.id).style.backgroundColor="red";
-    // }
-    // console.log(target.id)
-
-
