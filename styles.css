@@ -59,8 +59,8 @@ body {
 #canvas-controls {
     background-color: #1b1b1b;
     display: grid;
-    grid-template-columns: repeat(5, 154px);
-    grid-template-rows: repeat(3, 32px);
+    grid-template-columns: repeat(5, 160px);
+    grid-template-rows: repeat(3, 33px);
 
     /* Canvas controls area layout */
     grid-template-areas:
@@ -90,7 +90,8 @@ body {
 
 /* Unique property for 'title' cells for the canvas controls area */
 .cell-header {
-    margin-top: 8px;
+    margin-top: 2px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.086);
 }
 
 .cell-brushcolor {
