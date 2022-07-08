@@ -19,7 +19,7 @@ body {
 }
 
 #canvas-controls-container {
-    width: 624px;
+    width: 804px;
     height: 100px;
     margin-bottom: 24px;
 
@@ -57,23 +57,23 @@ body {
 
 /* for now make it 32*32 grid */
 #canvas {
-    border: 24px solid #1b1b1b;
+    border: 18px solid #1b1b1b;
     /* Add 16pxx to account for pixel borders */
-    width: 576px;
-    height: 576px;
+    width: 768px;
+    height: 768px;
     margin: 0px;
     padding: 0px;
     display: flex;
     align-content: flex-start;
     flex-wrap: wrap;
-    background-color: bisque;
+    background-color: rgb(0, 0, 0);
 }
 
 .pixel {
     width: 16px;
     height: 16px;
     background-color: aliceblue;
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.383);
 
     /* Prevent browser from displaying stop sign when clicking and dragging */
     /* https://stackoverflow.com/questions/51661036/mouseup-event-is-not-fired-when-you-release-button-on-another-element-or-somewhe */
