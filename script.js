@@ -69,8 +69,6 @@ function setCanvasParams(gridWidth, gridHeight, PIXEL_COUNT) {
     })
     pixels = []
 
-    // Calculate how many pixels this 
-
 
     for (let i = 0; i < PIXEL_COUNT; i++) {
         // Create div (pixel block) and give it a class and id

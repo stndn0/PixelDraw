@@ -28,8 +28,8 @@ body {
 #canvas-controls {
     background-color: #1b1b1b;
     display: grid;
-    grid-template-columns: 154px 154px 154px 154px 154px;
-    grid-template-rows: 32px 32px 32px;
+    grid-template-columns: repeat(5, 154px);
+    grid-template-rows: repeat(3, 32px);
 }
 
 .cell {
