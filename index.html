@@ -13,34 +13,55 @@
     <div id="canvas-container">
         <div id="canvas-controls-container">
             <div id="canvas-controls">
-                <div class="cell">
-                    <p class="text">Canvas Controls</p>
+                <div class="cell cell-header">
+                    <p class="cell-text">Canvas Controls</p>
                 </div>
-                <div class="cell">
-                    <p class="text">Brush Color</p>
+                <div class="cell cell-header">
+                    <p class="cell-text">Brush Color</p>
                 </div>
-                <div class="cell">
-                    <p class="text">Background Color</p>
+                <div class="cell cell-header">
+                    <p class="cell-text">Background Color</p>
                 </div>
-                <div class="cell">
-                    <p class="text">Fun Stuff</p>
+                <div class="cell cell-header">
+                    <p class="cell-text">Fun Stuff</p>
                 </div>
-                <div class="cell">
-                    <p class="text">Other</p>
+                <div class="cell cell-header">
+                    <p class="cell-text">Other</p>
                 </div>
                 <div class="cell">
                     <div class="slidecontainer">
-                        <input type="range" min="2" max="60" value="32" step="2" class="slider" id="myRange">
+                        <input type="range" min="2" max="60" value="32" step="2" class="slider" id="rangeSlider">
                     </div>
                 </div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell">
-                    <button type="button" id="canvas-reset">Reset Canvas</button></div>
-                <div class="cell">
-                    <p class="text" id="grid-size">Grid size: 32 x 32</p>
+                <div class="cell cell-brushcolor">
+                    <input type="color" id="brush-color" name="favcolor" value="#000000"><br><br>
                 </div>
+                <div class="cell cell-bgcolor">
+                    <input type="color" id="brush-color" name="favcolor" value="#000000"><br><br>
+                </div>
+
+                <div class="cell" id="close-btn">
+                    <button type="button" id="canvas-reset">Reset Canvas</button>
+                </div>
+                <div class="cell" id="grid-size-text">
+                    <p class="cell-text" id="grid-size">Grid size: 32 x 32</p>
+                </div>
+
+                <div class="cell">
+                    <label class="checkbox cell-text">
+                        <input class="input-checkbox" id="checkboxval" value="1" type="checkbox">
+                        Gridlines
+                    </label>
+                </div>
+
+                <div class="cell">
+                    <label class="checkbox cell-text">
+                        <input class="input-checkbox" id="checkboxval" value="1" type="checkbox">
+                        Rainbow Mode
+                    </label>
+                </div>
+
+
             </div>
         </div>
 

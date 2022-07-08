@@ -1,5 +1,10 @@
+/* 
+id = hashtag
+class = period
+*/
+
+
 * {
-    /* background-color: #ffb948; */
     font-family: Arial, Helvetica, sans-serif;
     background-color: #ffb948;
 }
@@ -10,6 +15,7 @@ body {
     overflow: auto;
 }
 
+/* The canvas-container stores both the canvas-controls-container and the drawable canvas itself */
 #canvas-container {
     display: flex;
     flex-direction: column;
@@ -18,45 +24,8 @@ body {
     min-height: 100vh;
 }
 
-#canvas-controls-container {
-    width: 804px;
-    height: 100px;
-    margin-bottom: 16px;
-
-}
-
-#canvas-controls {
-    background-color: #1b1b1b;
-    display: grid;
-    grid-template-columns: repeat(5, 154px);
-    grid-template-rows: repeat(3, 32px);
-}
-
-.cell {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: inherit;
-    padding-left: 6px;
-    padding-right: 6px;
-}
-
-.text {
-    font-size: 14px;
-    color: antiquewhite;
-    background-color: inherit;
-}
-
-.slidecontainer {
-    background-color: inherit;
-}
-
-
-/* for now make it 32*32 grid */
 #canvas {
     border: 18px solid #1b1b1b;
-    /* Add 16pxx to account for pixel borders */
     width: 768px;
     height: 768px;
     margin: 0px;
@@ -67,6 +36,7 @@ body {
     background-color: rgb(0, 0, 0);
 }
 
+/* A 'pixel' is a block in the canvas that the user can manipulate */
 .pixel {
     width: 16px;
     height: 16px;
@@ -75,6 +45,89 @@ body {
 
     /* Prevent browser from displaying stop sign when clicking and dragging */
     /* https://stackoverflow.com/questions/51661036/mouseup-event-is-not-fired-when-you-release-button-on-another-element-or-somewhe */
-    -webkit-user-select: none;          /* Chrome */
-    -moz-user-select: none;             /* Firefox */
+    -webkit-user-select: none;  /* Chrome */
+    -moz-user-select: none;     /* Firefox */
+}
+
+/* Styles for the canvas controls area. This is the area where the user adjusts the canvas properties*/
+#canvas-controls-container {
+    width: 804px;
+    height: 100px;
+    margin-bottom: 16px;
+}
+
+#canvas-controls {
+    background-color: #1b1b1b;
+    display: grid;
+    grid-template-columns: repeat(5, 154px);
+    grid-template-rows: repeat(3, 32px);
+
+    /* Canvas controls area layout */
+    grid-template-areas:
+        '. . . . .'
+        '. brush-clr bg-clr . close-btn'
+        'grid-size-text brush-clr bg-clr . .'
+    ;
+}
+
+/* Generic properties for a 'cell' in the canvas controls area */
+.cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: inherit;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+/* Generic properties for text within a cell for the canvas controls area */
+.cell-text {
+    font-size: 14px;
+    color: antiquewhite;
+    background-color: inherit;
+}
+
+/* Unique property for 'title' cells for the canvas controls area */
+.cell-header {
+    margin-top: 8px;
+}
+
+.cell-brushcolor {
+    grid-area: brush-clr;
+}
+
+.cell-bgcolor {
+    grid-area: bg-clr;
+}
+
+.slidecontainer {
+    background-color: inherit;
+}
+
+#rangeSlider{
+    width: 120px;
+}
+
+#close-btn {
+    grid-area: close-btn;
+}
+
+#grid-size-text {
+    grid-area: grid-size-text;
+    margin-bottom: 20px;
+}
+
+#brush-color {
+    margin-top: 22px;
+    width: 64px;
+    min-height: 48px;
+    background-color: #1b1b1b;
+    border: 0px;
+}
+
+.checkbox {
+    grid-area: cb-gridlines;
+    background-color: inherit;
+    font-size: 13px;
 }

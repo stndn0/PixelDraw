@@ -6,7 +6,7 @@ let pixels = []
 
 // DOM elements
 const canvas = document.getElementById("canvas")
-const gridSizeSlider = document.getElementById("myRange");
+const gridSizeSlider = document.getElementById("rangeSlider");
 const gridSizeText = document.getElementById("grid-size");
 const canvasResetBtn = document.getElementById("canvas-reset")
 
