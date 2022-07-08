@@ -1,11 +1,14 @@
 
-const PIXEL_COUNT = 1024
+const gridDefaultWidth = 32
+const gridDefaultHeight = 32
+const PIXEL_COUNT = gridDefaultWidth * gridDefaultHeight
 let pixels = []
 
 // DOM elements
 const canvas = document.getElementById("canvas")
 const gridSizeSlider = document.getElementById("myRange");
 const gridSizeText = document.getElementById("grid-size");
+const canvasResetBtn = document.getElementById("canvas-reset")
 
 let canvasWidth = getComputedStyle(document.querySelector('#canvas')).width;
 let canvasHeight = getComputedStyle(document.querySelector('#canvas')).height;
@@ -13,13 +16,6 @@ canvasWidth = parseInt(canvasWidth)         // Remove trailing 'px' from string
 canvasHeight = parseInt(canvasHeight)
 
 
-// Load canvas information. Populate grid with unique pixels.
-// for (let i = 0; i < PIXEL_COUNT; i++) {
-//     pixels[i] = document.createElement('div')
-//     pixels[i].className = 'pixel'
-//     pixels[i].id = 'pixel' + i
-//     document.getElementById("canvas").appendChild(pixels[i])
-// }
 setCanvasParams(gridSizeSlider.value, gridSizeSlider.value, gridSizeSlider.value * gridSizeSlider.value)
 
 
@@ -27,6 +23,12 @@ setCanvasParams(gridSizeSlider.value, gridSizeSlider.value, gridSizeSlider.value
 gridSizeSlider.oninput = function () {
     gridSizeText.innerHTML = "Grid size: " + gridSizeSlider.value + " x " + gridSizeSlider.value;
     setCanvasParams(gridSizeSlider.value, gridSizeSlider.value, gridSizeSlider.value * gridSizeSlider.value)
+}
+
+canvasResetBtn.onclick = function () {
+    setCanvasParams(gridDefaultWidth, gridDefaultHeight, PIXEL_COUNT)
+    gridSizeSlider.value = gridDefaultWidth;
+    gridSizeText.innerHTML = "Grid size: " + gridSizeSlider.value + " x " + gridSizeSlider.value;
 }
 
 
